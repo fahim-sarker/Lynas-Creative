@@ -1,5 +1,5 @@
 import React from "react";
-import banVideo from "../assets/ban.mp4";
+import banVideo from "../assets/history1.mp4";
 
 const Banner = () => {
   return (
