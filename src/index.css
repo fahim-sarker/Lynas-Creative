@@ -1,0 +1,174 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes rotateInfinity {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotateInfinity 10s linear infinite;
+  -webkit-animation: rotateInfinity 10s linear infinite;
+}
+
+.scrolling-text {
+  display: flex;
+  animation: scrollText 10s linear infinite;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%); 
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
+}
+@keyframes continuousColorChange {
+  0% {
+    color: #66FCF1;
+  }
+  25% {
+    color: #000; 
+  }
+  50% {
+    color: #FFB6C1;
+  }
+  75% {
+    color: #fff; 
+  }
+  100% {
+    color: #66FCF1; 
+  }
+}
+
+.animate-text {
+  animation: continuousColorChange 10s infinite; 
+}
+.star-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0dcaf0; 
+  z-index: -1;
+  overflow: hidden;
+}
+
+.star-field::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(circle, white 1px, transparent 1px);
+  background-size: 10px 10px;
+  animation: starAnimation 100s linear infinite;
+}
+
+@keyframes starAnimation {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-200%, -200%);
+  }
+}
+
+.ball-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;  
+}
+
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0.6;
+  animation: moveBall 10s linear infinite;
+}
+
+.ball1 {
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.ball2 {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  top: 50%;
+  left: 40%;
+  animation-delay: 3s;
+}
+
+.ball3 {
+  width: 70px;
+  height: 70px;
+  background-color: #FFB6C1;
+  top: 30%;
+  left: 70%;
+  animation-delay: 5s;
+}
+
+.ball5 {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  left: 80%;
+  animation-delay: 9s;
+}
+
+/* The keyframes for the ball movement animation */
+@keyframes moveBall {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(100px, 100px) rotate(90deg);
+  }
+  50% {
+    transform: translate(200px, -50px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-100px, 150px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ffffff; 
+  }
+  100% {
+    color: #66FCF1;
+  }
+}
+
+.animate-color-change {
+  animation: colorChange 5s infinite; 
+}
+
